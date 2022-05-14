@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tus Series</title>
+        <link href="mis estilos.css" rel="stylesheet" type="text/css"> 
+        <link href= "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel= "stylesheet">
+        <style>@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap');</style>
+    </head>
+
+    <body>
+        <header>
+            <div class="contenedor">
+
+                <h1 class="titulo"><em><b>Tus Series</b></em></h1>
+
+            </div>
+        </header>
+  
+        <div class= "box">
+            <form class="form-index">
+                <img class="search" src="search.png">
+                <input id="textoBusqueda" type="text" placeholder="Titulo...">
+                <button id="botonBusqueda" type="submit"> Buscar </button>
+
+            </form>
+        </div>
+
+        <section class=" hidden modal modal--show">
+            <div class="modal-container">
+                <h2 class="modal-title"> Crear Serie </h2>
+                <form class="form-serie">
+                    <label>Nombre</label>
+                    <input type="text">
+                    <label>Temporadas</label>
+                    <input type="text">
+                </form>
+                <div class="new_edit">
+                    <button type="button"><b>Crear</b></button>
+                    <button type="button" class="modal-cerrar-boton"><b>Cancelar</b></button>
+                </div>
+            </div>
+        </section>
+
+        <section class=" hidden modal-2 modal--show">
+            <div class="modal-container">
+                <h2 class="modal-title"> Editar Serie </h2>
+                <form class="form-serie">
+                    <label>Nombre</label>
+                    <input type="text">
+                    <label>Temporadas</label>
+                    <input type="text">
+                    <label>Temporadas Vistas</label>
+                    <input type="text">
+                </form>
+                <div class="new_edit">
+                    <button type="button"><b>Editar</b></button>
+                    <button type="button" class="modal-2-cerrar-boton"><b>Cancelar</b></button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container flex justify-center mx-auto">
+            <table class="shadow-lg bg-white border-collapse">
+                <tr>
+                  <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Nombre</em></em></th>
+                  <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Temporadas</em></th>
+                  <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Temporadas Vistas</em></th>
+                  <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Porcentaje Temporadas Vistas</em></th>
+                </tr>
+                <tr id="agregarTabla" class="">
+                    <td class="text-center border-4 border-black px-8 py-4 text-lg">
+                        <input 
+                        class="text-center bg-gray-200 text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
+                        type="text" 
+                        id="input_nombre"/> 
+                    </td>
+                    <td class="text-center border-4 border-black px-8 py-4 text-lg">
+                        <input
+                        class="text-center bg-gray-200 text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
+                        type="number"
+                        id="input_temporadas"/>
+                    </td>
+                    <td class="text-center border-4 border-black px-8 py-4 text-lg">
+                        <input
+                        class="text-center bg-gray-200 text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
+                        type="number"
+                        id="input_temporadas_vistas"/>
+                    </td>
+                    <td class="text-center border-4 border-black px-8 py-4 text-lg">
+                        <input
+                        class="text-center bg-gray-200 text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
+                        type="number"
+                        id="input_porc_temporadas_vistas"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                </tr>
+                <tr>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                    <td class="border-4 border-black px-8 py-4 text-lg"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="box2">
+            <div class="more_less">
+                <button type="button"><img src="mas.png"></button>
+                <button type="button"><img src="menos.png"></button>
+            </div>
+
+            <div class="new_edit">
+                <button class="modal-abrir-boton" type="button" onclick="nuevaSerie()"><b>Nueva</b></button>
+                <button class="modal-2-abrir-boton" type="button"><b>Editar</b></button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    
+    </body>
+
+</html>

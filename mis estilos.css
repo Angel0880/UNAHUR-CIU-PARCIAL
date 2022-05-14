@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(50,50,50);
+    
+}
+
+.contenedor {
+
+    width: 90%;
+    margin: auto;
+
+}
+
+header {
+    padding: 30px 0;
+    background-color: green;
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.titulo {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: blue;
+    font-size: 50px;
+}
+
+.box {
+    margin-top: 3%;
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(50,50,50);
+    display: flex;
+    justify-content: center;
+}
+
+.form-index {
+    background: #fff;
+    width: 600px;
+    height: 50px;
+    display: flex;
+}
+
+.form-index input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: large;
+}
+
+.form-index button {
+    background: rgb(158, 28, 28);
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.form-index .search {
+    align-self: center;
+    padding: 10px 20px;
+}
+
+.more_less {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
+.new_edit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 5%;
+    margin-right: 2%;
+}
+
+.box2 {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.box-serie {
+
+    margin-top: 3%;
+    width: 50%;
+    height: 15vh;
+    background-color: rgb(50,50,50);
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15%;
+
+}
+
+.form-serie {
+
+    min-width: 200px;
+    padding: 10px;
+
+}
+
+.form-serie input {
+
+    width: 95%;
+    padding: 7px;
+    margin: 8px 0;
+
+}
+
+.form-serie label {
+
+    font-size: x-large;
+
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.modal-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+}
+
+.modal-title {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: blue;
+    font-size: 50px;
+}
+
+.new_edit button {
+    text-decoration: none;
+    padding: 1em 3em;
+    border: 1px solid;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 300;
+    background-color: #972617;
+    color: black;
+    font-size: 20px;
+    transition: background-color .3s;
+    cursor: pointer;
+}
+
+.modal-container {
+
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: rgb(114, 41, 124);
+    padding: 3em 2.5em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
