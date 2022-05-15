@@ -11,7 +11,6 @@ const editar = document.querySelector(".modal-editar-serie")
 const tabla = document.getElementById("tabla")
 const mas = document.getElementById("mas")
 const menos = document.getElementById("menos")
-const eliminar = document.getElementById("eliminar")
 const botonBuscar = document.getElementById("botonBusqueda")
 
 abrirCrear.addEventListener("click",(e)=>{
@@ -108,7 +107,7 @@ editar.addEventListener("click", () => {
     alert("'Temporadas' y 'Temporadas Vistas' deben ser numeros naturales")
     return false
   }
-  else if (temporadasVistasACambiar < temporadasACambiar){
+  else if (temporadasVistasACambiar > temporadasACambiar){
     alert("Las temporadas vistas no pueden ser mayor al numero de temporadas")
     return filaRoja
   } 
@@ -273,6 +272,3 @@ const buscar = function(){
 }
 
 botonBuscar.addEventListener("click", buscar)
-
-
-
