@@ -6,14 +6,10 @@ const cerrarCrear = document.querySelector(".modal-cerrar-boton")
 const cerrarEditar = document.querySelector(".modal-2-cerrar-boton")
 const crear = document.querySelector(".modal-crear-serie")
 
-var valorNombre = document.getElementById("crearNombre").value
-var valorTemporada = document.getElementById("crearTemporada").value
-
 const tabla = document.getElementById("tabla")
 
 abrirCrear.addEventListener("click",(e)=>{
 
-    e.preventDefault();
     modalCrear.classList.toggle("hidden")
     modalCrear.classList.add(".modal--show");
 
@@ -21,7 +17,6 @@ abrirCrear.addEventListener("click",(e)=>{
 
 abrirEditar.addEventListener("click",(e)=>{
 
-    e.preventDefault();
     modalEditar.classList.toggle("hidden")
     modalEditar.classList.add(".modal--show");
 
@@ -29,7 +24,6 @@ abrirEditar.addEventListener("click",(e)=>{
 
 cerrarCrear.addEventListener("click", (e)=>{
 
-    e.preventDefault();
     modalCrear.classList.toggle("hidden");
     modalCrear.classList.remove(".modal--show");
 
@@ -37,53 +31,46 @@ cerrarCrear.addEventListener("click", (e)=>{
 
 cerrarEditar.addEventListener("click", (e)=>{
 
-    e.preventDefault();
     modalEditar.classList.toggle("hidden");
     modalEditar.classList.remove(".modal--show");
 
 })
 
 crear.addEventListener("click",(e)=>{
-    
-    e.preventDefault();
-    crearSerie(valorNombre,valorTemporada);
+    const valorNombre = document.getElementById("crearNombre").value
+    const valorTemporada = document.getElementById("crearTemporada").value
+    crearSerie({nombreSerie: valorNombre,cantTemporadas: valorTemporada});
     modalCrear.classList.toggle("hidden");
     modalCrear.classList.remove(".modal--show");
     tabla.classList.toggle("hidden");
 
 })
 
-function crearSerie(nombreSerie, cantTemporadas) {
-
-    const bodyTable = document.getElementById("tabla");
-    const nuevoTr = document.createElement("tr");
-
-    var celdanro1 = document.createElement("td");
-    var celdanro2 = document.createElement("td");
-    var celdanro3 = document.createElement("td");
-    var celdanro4 = document.createElement("td");
-
-    var textnro1 = document.createElement("p");
-    var textnro2 = document.createElement("p");
-    var textnro3 = document.createElement("p");
-    var textnro4 = document.createElement("p");
-
-    var celdas =[celdanro1,celdanro2,celdanro3,celdanro4]
-
-    bodyTable.appendChild(nuevoTr);
-
-    textnro1.value = nombreSerie
-    textnro2.value = cantTemporadas
-
-    celdanro1.appendChild(textnro1)
-    celdanro2.appendChild(textnro2)
-    celdanro3.appendChild(textnro3)
-    celdanro4.appendChild(textnro4)
-
-    for (let i=0; i < celdas.length; i++) {
-
-        nuevoTr.appendChild(celdas[i]);
-
-    }
-    
-}
+function crearSerie({nombreSerie, cantTemporadas}) {
+    const nombreSinEspacios = `${nombreSerie.split(" ").join("")}`;
+    document.getElementById("tabla").insertAdjacentHTML(
+      "beforebegin",
+      `
+    <tr>
+        <td "text-center border-4 border-black px-8 py-4 text-lg">
+            <p id="nombre${nombreSinEspacios}" class="text-gray-900 whitespace-no-wrap">
+                ${nombreSerie}
+            </p>
+        </td>
+        <td "text-center border-4 border-black px-8 py-4 text-lg">
+            <p id="temporadasTotales${nombreSinEspacios}" class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600">${cantTemporadas}</p>
+        </td>
+        <td "text-center border-4 border-black px-8 py-4 text-lg">
+            <p class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600" id="temporadasVistas${nombreSinEspacios}">
+                0
+            </p>
+        </td>
+        <td "text-center border-4 border-black px-8 py-4 text-lg">
+            <p id="porcentaje${nombreSinEspacios}" class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600">
+                0
+            </p>
+        </td>
+    </tr>
+      `
+    );
+  };
