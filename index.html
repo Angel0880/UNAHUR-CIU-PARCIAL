@@ -20,7 +20,7 @@
             <form class="form-index">
                 <img class="search" src="search.png">
                 <input id="textoBusqueda" type="text" placeholder="Titulo...">
-                <button id="botonBusqueda" type="submit"> Buscar </button>
+                <button id="botonBusqueda" type="button"> Buscar </button>
 
             </form>
         </div>
@@ -46,76 +46,39 @@
                 <h2 class="modal-title"> Editar Serie </h2>
                 <form class="form-serie">
                     <label>Nombre</label>
-                    <input type="text">
+                    <input type="text" id ="editarNombre">
                     <label>Temporadas</label>
-                    <input type="text">
+                    <input type="text" id ="editarTemporadas">
                     <label>Temporadas Vistas</label>
-                    <input type="text">
+                    <input type="text" id ="editarTemporadasVistas">
                 </form>
                 <div class="new_edit">
-                    <button type="button"><b>Editar</b></button>
+                    <button type="button" class="modal-editar-serie"><b>Editar</b></button>
                     <button type="button" class="modal-2-cerrar-boton"><b>Cancelar</b></button>
                 </div>
             </div>
         </section>
 
         <div class="container flex justify-center mx-auto">
-            <table class="shadow-lg bg-white border-collapse">
+            <table id="tabla" class="table-auto mt-2.5 mb-2.5">
                 <thead>
                     <tr>
-                    <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Nombre</em></em></th>
-                    <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Temporadas</em></th>
-                    <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Temporadas Vistas</em></th>
-                    <th class="bg-blue-100 border-4 border-black text-left px-8 py-4 text-2xl"><em>Porcentaje Temporadas Vistas</em></th>
+                    <th class="bg-blue-100 text-center px-8 py-4 text-2xl"><em>Nombre</em></em></th>
+                    <th class="bg-blue-100 text-center px-8 py-4 text-2xl"><em>Temporadas</em></th>
+                    <th class="bg-blue-100 text-center px-8 py-4 text-2xl"><em>Temporadas Vistas</em></th>
+                    <th class="bg-blue-100 text-center px-8 py-4 text-2xl"><em>Porcentaje Temporadas Vistas</em></th>
                     </tr>
                 </thead>
-                <tbody id="tabla" class="hidden">
-                    <tr>
-                        <td class="text-center border-4 border-black px-8 py-4 text-lg">
-                            <p
-                            class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
-                            type = "text"
-                            id="input_nombre"> 
-                        </td>
-                        <td class="text-center border-4 border-black px-8 py-4 text-lg">
-                            <p
-                            class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
-                            type = "text"
-                            id="input_temporadas">
-                        </td>
-                        <td class="text-center border-4 border-black px-8 py-4 text-lg">
-                            <p
-                            class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
-                            type = "text"
-                            id="input_temporadas_vistas">
-                        </td>
-                        <td class="text-center border-4 border-black px-8 py-4 text-lg">
-                            <p
-                            class="text-center text-lg rounded-lg w-32 py-1 px-3 text-sm text-black-600"
-                            type = "text"
-                            id="input_porc_temporadas_vistas">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                    </tr>
-                    <tr>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                        <td class="border-4 border-black px-8 py-4 text-lg"></td>
-                    </tr>
+                <tbody class=" bg-white text-center px-8 py-4 text-2xl">
                 </tbody>
             </table>
         </div>
 
         <div class="box2">
             <div class="more_less">
-                <button type="button"><img src="mas.png"></button>
-                <button type="button"><img src="menos.png"></button>
+                <button id="mas" class="btn" type="submit"><img src="mas.png"></button>
+                <button id="menos" class="btn" type="submit" ><img src="menos.png"></button>
+                <button id="eliminar" class="btn" type="submit"><img src="borrar.png"></button>
             </div>
 
             <div class="new_edit">

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 
 }
+.fila{
+    font-weight: bolder;
+    color: red;
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
