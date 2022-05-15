@@ -6,8 +6,8 @@ const cerrarCrear = document.querySelector(".modal-cerrar-boton")
 const cerrarEditar = document.querySelector(".modal-2-cerrar-boton")
 const crear = document.querySelector(".modal-crear-serie")
 
-const valorNombre = document.getElementById("crearNombre").nodeValue
-const valorTemporada = document.getElementById("crearTemporada").nodeValue
+var valorNombre = document.getElementById("crearNombre").value
+var valorTemporada = document.getElementById("crearTemporada").value
 
 const tabla = document.getElementById("tabla")
 
@@ -63,11 +63,22 @@ function crearSerie(nombreSerie, cantTemporadas) {
     var celdanro3 = document.createElement("td");
     var celdanro4 = document.createElement("td");
 
+    var textnro1 = document.createElement("p");
+    var textnro2 = document.createElement("p");
+    var textnro3 = document.createElement("p");
+    var textnro4 = document.createElement("p");
+
     var celdas =[celdanro1,celdanro2,celdanro3,celdanro4]
 
     bodyTable.appendChild(nuevoTr);
-    celdanro1.innerHTML = nombreSerie
-    celdanro2.innerHTML = cantTemporadas
+
+    textnro1.value = nombreSerie
+    textnro2.value = cantTemporadas
+
+    celdanro1.appendChild(textnro1)
+    celdanro2.appendChild(textnro2)
+    celdanro3.appendChild(textnro3)
+    celdanro4.appendChild(textnro4)
 
     for (let i=0; i < celdas.length; i++) {
 
