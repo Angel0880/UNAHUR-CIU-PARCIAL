@@ -11,7 +11,6 @@ const editar = document.querySelector(".modal-editar-serie")
 const tabla = document.getElementById("tabla")
 const mas = document.getElementById("mas")
 const menos = document.getElementById("menos")
-const botonBuscar = document.getElementById("botonBusqueda")
 
 abrirCrear.addEventListener("click",(e)=>{
 
@@ -45,14 +44,16 @@ cerrarEditar.addEventListener("click", ()=>{
 
 var nombre = prompt("Hola, cual es tu nombre?")
 
-alert("Encantado de conocerte " + nombre)
+alert("Encantado de conocerte, " + nombre)
 
 alert("Bienvenido a Tus Series!")
-alert("En este programa vas a poder llevar un registro de tus series")
-alert("Antes de comenzar vamos a tirar unos tips")
+alert("En esta aplicacion vas a poder llevar un registro de las series que te interesen ver o que estas viendo ahora mismo")
+alert("Antes de comenzar, vamos a tirar unos tips")
 alert("Primero: Una vez creada una serie, para buscarla debes escribirla en el recuadro y darle al boton buscar")
-alert("Segundo: Antes de editar tu serie debes hacer doble clik en la que quieres editar")
-alert("Tercero: Utiliza los + y - para agregar o sacar una temporada vista a tu serie. Tambien debe estar seleccionada")
+alert("Segundo: Luego de buscar una serie especifica, para que se vuela a mostrar todas las series borra lo que escribiste en el recuadro del buscador, dejandolo vacio, y vuelve a darle click al boton buscar")
+alert("Tercero: Si quieres editar tu serie debes colocar el mouse encima, hacer un clik y luego darle al boton editar")
+alert("Cuarto: Si no quieres que una serie este seleccionada haz doble click en la misma")
+alert("Quinto: Utiliza los + y - para agregar o sacar una temporada vista a tu serie. Recuerda que debe estar seleccionada para funcionar")
 alert("Eso es todo. Que lo disfrutes!!!")
 
 // VALIDAR "CREAR UNA SERIE"
@@ -191,8 +192,7 @@ var seleccionSerie = () => {
     }
 }
 
-tabla.addEventListener("click", seleccionSerie)
-
+tabla.onmouseover = seleccionSerie
 
 // AGREGAR UNA TEMPORADA A TEMPORADAS VISTAS
 
@@ -248,7 +248,8 @@ function modificarPorcentaje(celdas){
 
 // BUSCAR UNA SERIE CREADA
 
-buscarInput = document.getElementById("textoBusqueda")
+const buscarInput = document.getElementById("textoBusqueda")
+const botonBuscar = document.getElementById("botonBusqueda")
 
 const buscar = function(){
   const texto = buscarInput.value.toLowerCase();
