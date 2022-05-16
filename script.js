@@ -41,7 +41,7 @@ cerrarEditar.addEventListener("click", ()=>{
 })
 
 // BIENVENIDA
-
+/*
 var nombre = prompt("Hola, cual es tu nombre?")
 
 alert("Encantado de conocerte, " + nombre)
@@ -55,7 +55,7 @@ alert("Tercero: Si quieres editar tu serie debes colocar el mouse encima, hacer 
 alert("Cuarto: Si no quieres que una serie este seleccionada haz doble click en la misma")
 alert("Quinto: Utiliza los + y - para agregar o sacar una temporada vista a tu serie. Recuerda que debe estar seleccionada para funcionar")
 alert("Eso es todo. Que lo disfrutes!!!")
-
+*/
 // VALIDAR "CREAR UNA SERIE"
 
 crear.addEventListener("click", () => {
