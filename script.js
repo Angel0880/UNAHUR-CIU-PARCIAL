@@ -41,11 +41,10 @@ cerrarEditar.addEventListener("click", ()=>{
 })
 
 // BIENVENIDA
-/*
+
 var nombre = prompt("Hola, cual es tu nombre?")
 
 alert("Encantado de conocerte, " + nombre)
-
 alert("Bienvenido a Tus Series!")
 alert("En esta aplicacion vas a poder llevar un registro de las series que te interesen ver o que estas viendo ahora mismo")
 alert("Antes de comenzar, vamos a tirar unos tips")
@@ -55,7 +54,7 @@ alert("Tercero: Si quieres editar tu serie debes colocar el mouse encima, hacer 
 alert("Cuarto: Si no quieres que una serie este seleccionada haz doble click en la misma")
 alert("Quinto: Utiliza los + y - para agregar o sacar una temporada vista a tu serie. Recuerda que debe estar seleccionada para funcionar")
 alert("Eso es todo. Que lo disfrutes!!!")
-*/
+
 // VALIDAR "CREAR UNA SERIE"
 
 crear.addEventListener("click", () => {
@@ -122,6 +121,8 @@ editar.addEventListener("click", () => {
   }
 
 })
+
+// VALIDAR NUMEROS NATURALES
 
 function isNaturalNumber(n) {
   n = n.toString();
